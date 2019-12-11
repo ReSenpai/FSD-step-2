@@ -1,0 +1,17 @@
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+
+h1 {
+    color: red;
+}
+h3 {
+    color: red;
+}
+h2 {
+    color: red;
+}
+
+body {
+    font-family: $mainFont;
+}

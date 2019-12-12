@@ -1,0 +1,133 @@
+
+.login-form {
+    position: relative;
+    margin: 0;
+    padding: 30px;
+    width: 380px;
+    height: 358px;
+
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.login-form__heading {
+    position: relative;
+    width: 320px;
+    height: 30px;
+    margin: 10px 0;
+
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+
+    color: #1F2041;
+}
+
+.login-form__text-field-email {
+    margin: 10px 0 5px 0;
+}
+
+.login-form__text-field-password {
+    margin: 5px 0 10px 0;
+}
+
+.long-button.login-form__long-button {
+    position: relative;
+    display: flex;
+    width: 320px;
+    height: 44px;
+    margin: 10px 0;
+
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border: 0;
+    border-radius: 22px;
+}
+
+.login-form__button-text {
+    position: relative;
+    width: 280px;
+    height: 15px;
+    margin: 15px 0 14px 20px;
+
+    text-align: center;
+    font-family: $montNorm;;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+.login-form__button-icon {
+    position: relative;
+    width: 44px;
+    margin: 10px -14px 10px;
+
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: white;
+}
+
+.login-form__no-account-text {
+    position: relative;
+    width: 164px;
+    height: 18px;
+    margin: 13px 0;
+
+    font-family: $montNorm;
+    font-size: 14px;
+    line-height: 18px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.login-form__flex {
+    display: flex;
+    justify-content: space-between;
+    margin: 29px 0;
+}
+
+.login-form__short-button-gradient {
+    position: relative;
+    width: 95px;
+    padding: 2px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+    border-radius: 24px;
+}
+
+.short-button.login-form__short-button {
+    position: relative;
+    width: 95px;
+    height: 40px;
+
+    background: #FFFFFF;
+
+    border: 0;
+    border-radius: 22px;
+
+    font-family: $montNorm;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #BC9CFF;
+}

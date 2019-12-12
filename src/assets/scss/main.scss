@@ -1,17 +1,17 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
+@import "../../BEM/form-elemets/text-field.scss";
+@import "../../BEM/login-form/login-form";
+
+html {
+    background: gray;
+    padding: 50px;
+
+}
 
 h1 {
-    color: red;
-}
-h3 {
-    color: red;
-}
-h2 {
-    color: red;
+    margin: 0;
 }
 
-body {
-    font-family: $mainFont;
-}
+

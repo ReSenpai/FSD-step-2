@@ -1,0 +1,12 @@
+div(class="login-form")
+    form
+        h1(class="login-form__heading") Войти
+        input(class="text-field login-form__text-field-email", type="email", placeholder="Email", required)
+        input(class="text-field login-form__text-field-password", type="password", placeholder="Пароль", required)
+        div(class="long-button login-form__long-button")
+            span(class="login-form__button-text") войти
+            <i class="login-form__button-icon">arrow_forward</i>
+        div(class="login-form__flex")
+            span(class="login-form__no-account-text") Нет аккаунта на Toxin?
+            div(class="login-form__short-button-gradient")
+                input(class="short-button login-form__short-button", type="button", value="Создать")

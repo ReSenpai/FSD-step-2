@@ -23,8 +23,8 @@ module.exports = {
         paths: PATHS
     },
     entry: {
-        app: PATHS.src,
-        lk: `${PATHS.src}/lk.js`
+        app: PATHS.src
+        // lk: `${PATHS.src}/lk.js`
     },
     output: {
         filename: `${PATHS.assets}js/[name].[hash].js`,
@@ -111,7 +111,8 @@ module.exports = {
     resolve: {
         alias: {
             '~' : 'src',
-            'vue$' : 'vue/dist/vue.js'
+            'vue$' : 'vue/dist/vue.js',
+            'bem$' : '../../BEM'
         }
     },
     plugins: [

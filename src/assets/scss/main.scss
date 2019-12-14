@@ -1,8 +1,13 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
-@import "../../BEM/form-elemets/text-field.scss";
-@import "../../BEM/login-form/login-form";
+@import "utils/nullstyle";
+@import "../../modules/text-field/text-field.scss";
+@import "../../modules/login-form/login-form.scss";
+@import "../../modules/dropdown/dropdown.scss";
+@import "../../modules/date-dropdown/date-dropdown.scss";
+@import "../../modules/filter-date-dropdown/filter-date-dropdown.scss";
+@import "../../modules/text-field/subscription-text-field.scss";
 
 html {
     background: gray;
@@ -10,8 +15,14 @@ html {
 
 }
 
-h1 {
-    margin: 0;
+.test {
+    width: 400px;
+    height: 400px;
+    margin: 100px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

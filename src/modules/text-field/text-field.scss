@@ -6,25 +6,25 @@
     height: 44px;
     padding: 12px 15px;
 
-    background: #FFFFFF;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    background: $elementBack;
+    border: 1px solid $darkShade25;
     box-sizing: border-box;
     border-radius: 4px;
     outline: none;
 
-    font-family: $montNorm;;
+    font-family: $montNorm;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 24px;
 
-    color: rgba(31, 32, 65, 0.25);
+    color: $darkShade25;
 }
 
 .text-field:focus {
-    border: 1px solid rgba(31, 32, 65, 0.5);
+    border: 1px solid $darkShade50;
 }
 
 .text-field:hover {
-    border: 1px solid rgba(31, 32, 65, 0.5);
+    border: 1px solid $darkShade50;
 }

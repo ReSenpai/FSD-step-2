@@ -1,0 +1,43 @@
+.date-dropdown {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.date-dropdown-input {
+    position: relative;
+    width: 150px;
+    height: 44px;
+    padding: 12px 15px;
+
+    background: none;
+    border: 1px solid $darkShade25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+
+    font-family: $montNorm;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    color: $darkShade75;
+}
+
+.date-dropdown-arrow {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: $icons;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+
+    color: $darkShade50;
+}

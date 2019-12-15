@@ -1,0 +1,94 @@
+
+.short-dropdown {
+
+    &__header {
+        position: relative;
+        width: 266px;
+        height: 44px;
+        display: flex;
+        justify-content: flex-end;
+
+        border: 1px solid $darkShade25;
+        box-sizing: border-box;
+        border-radius: 4px 4px 0 0;
+        outline: none;
+
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+
+        background: $elementBack;
+        color: $darkShade75;
+
+        appearance: none;
+
+        &:focus {
+            border: 1px solid $darkShade50; 
+        }
+
+        &:hover {
+            border: 1px solid $darkShade50;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: $icons;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+
+        color: $darkShade50;
+    }
+
+    &__ul {
+        width: 266px;
+        height: 119px;
+        display: flex;
+        flex-direction: column;
+
+        background: $elementBack;
+
+        border: 1px solid $darkShade50;
+        border-top: none;
+        box-sizing: border-box;
+        border-radius: 0 0 4px 4px ;
+
+        list-style-type: none;
+    }
+
+    &__li {
+        display: flex;
+        justify-content: space-between;flex-basis: 33.333%;
+
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        text-transform: uppercase;
+
+        color: $darkShade100;
+    }
+
+    &__circle {
+        width: 30px;
+        height: 30px;
+
+        border: 1px solid $darkShade25;
+        box-sizing: border-box;
+        border-radius: 25px;
+
+
+    }
+}

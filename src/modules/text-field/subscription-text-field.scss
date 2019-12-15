@@ -17,15 +17,38 @@
         font-size: 24px;
         line-height: 24px;
 
+        background: $purpleGradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     &__input {
         width: 267px;
         height: 44px;
-
-        background: $elementBack;
+        padding: 0px 0px 3px 13px;
 
         border: 1px solid $darkShade25;
         box-sizing: border-box;
         border-radius: 4px;
+
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+
+        background: $elementBack;
+        color: $darkShade75;
+        
+        &::placeholder {
+            color: $darkShade25;
+        }
+
+        &:hover {
+            border: 1px solid $darkShade50;
+        }
+
+        &:focus {
+            border: 1px solid $darkShade50;
+        }
     }
 }

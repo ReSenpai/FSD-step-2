@@ -1,28 +1,21 @@
+//- mixin  li-dropdown
+
+mixin li-dropdown(room, counter)
+    li.short-dropdown__li= room
+        .counter
+            .counter__circle#counter__circle_minus(class="counter__circle_minus")
+            .counter__number#counter__number= counter
+            .counter__circle#counter__circle_plus(class="counter__circle_plus")
+                
+
+//- block short-dropdown
 
 .test
     .short-dropdown
         .short-dropdown__header
-            span.short-dropdown__result
+            p.short-dropdown__text-header#__text-header 2 спальни, 2 кровати...
             i.short-dropdown__arrow expand_more
         ul.short-dropdown__ul
-            li.short-dropdown__li спальни
-                .short-dropdown__circle(class="short-dropdown__circle_minus")
-                    span.short-dropdown__span_minus
-                .short-dropdown__counter 2
-                .short-dropdown__circle(class="short-dropdown__circle_plus")
-                  span.short-dropdown__span_minus
-                  span.short-dropdown__span_plus 
-            li.short-dropdown__li кровати
-                .short-dropdown__circle(class="short-dropdown__circle_minus")
-                    span.short-dropdown__span_minus
-                .short-dropdown__counter 2
-                .short-dropdown__circle(class="short-dropdown__circle_plus")
-                  span.short-dropdown__span_minus
-                  span.short-dropdown__span_plus 
-            li.short-dropdown__li ванные команты
-                .short-dropdown__circle(class="short-dropdown__circle_minus")
-                    span.short-dropdown__span_minus
-                .short-dropdown__counter 2
-                .short-dropdown__circle(class="short-dropdown__circle_plus")
-                  span.short-dropdown__span_minus
-                  span.short-dropdown__span_plus            
+            +li-dropdown('cпальни', '2')
+            +li-dropdown('кровати', '2')
+            +li-dropdown('ванные комнаты', '0')         

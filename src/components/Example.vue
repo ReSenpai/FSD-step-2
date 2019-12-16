@@ -1,7 +1,6 @@
 <template>
      <section id="main">
         <div class="container">
-                <h1>Webpack message: {{ message}}</h1>
         </div>
     </section>
 </template>
@@ -20,7 +19,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    h1 {
-        color: black;
-    }
 </style>

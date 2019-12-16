@@ -1,6 +1,10 @@
 import './js/common.js';
 import './assets/css/main.css';
 import './assets/scss/main.scss';
+import './modules/short-dropdown/short-dropdown.js';
+
+// import 'jquery';
+import $ from 'jquery';
 
 // import 'vue';
 window.Vue = require('vue');

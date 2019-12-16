@@ -6,21 +6,14 @@
         width: 266px;
         height: 44px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
 
         border: 1px solid $darkShade25;
         box-sizing: border-box;
         border-radius: 4px 4px 0 0;
         outline: none;
 
-        font-family: $montNorm;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 24px;
-
         background: $elementBack;
-        color: $darkShade75;
 
         appearance: none;
 
@@ -30,16 +23,35 @@
 
         &:hover {
             border: 1px solid $darkShade50;
+            transition: 0.3s;
         }
     }
 
+    &__text-header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 0px 2px 13px;
+
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+
+        color: $darkShade75;
+    }
+
     &__arrow {
-        position: absolute;
+        position: relative;
         width: 44px;
         height: 44px;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        cursor: pointer;
 
         font-family: $icons;
         font-style: normal;
@@ -52,9 +64,10 @@
 
     &__ul {
         width: 266px;
-        height: 119px;
+        height: 118px;
         display: flex;
         flex-direction: column;
+        padding: 0px 0px 4px 0px;
 
         background: $elementBack;
 
@@ -64,11 +77,33 @@
         border-radius: 0 0 4px 4px ;
 
         list-style-type: none;
+
+        transition: 0.3s;
+
+        z-index: 99;
+        overflow-x: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: all 0.4s ease-in-out;
+
+        &_open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: all 0.4s ease-in-out;
+            z-index: 99;
+
+            background: black;
+        }
     }
 
     &__li {
         display: flex;
-        justify-content: space-between;flex-basis: 33.333%;
+        align-items: center;
+        justify-content: space-between;
+        flex-basis: 33.333%;
+        padding: 5px 6px 3px 13px;
 
         font-family: $montBold;
         font-style: normal;
@@ -80,15 +115,92 @@
 
         color: $darkShade100;
     }
+}
+
+.counter {
+    width: 92px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+
+
 
     &__circle {
         width: 30px;
         height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
 
         border: 1px solid $darkShade25;
         box-sizing: border-box;
         border-radius: 25px;
 
+        &:hover {
+            border: 1px solid $darkShade50;
+            transition: 0.3s;
+        }
 
+        &:active {
+
+            width: 35px;
+            height: 35px;
+
+            transition: 0.1s;
+
+        }
+
+        &_minus {
+            
+            &::before {
+                content: '';
+                position: absolute;
+                width: 5px;
+                height: 1px;
+        
+                background: $darkShade50;
+            }
+
+            &:hover::before {
+                background: $darkShade75;
+                transition: 0.3s;
+            }
+        }
+
+        &_plus {
+            &::before {
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 1px;
+        
+                background: $darkShade50;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 1px;
+        
+                background: $darkShade50;
+
+                transform: rotate(90deg);
+            }
+
+            &:hover::before {
+                background: $darkShade75;
+                transition: 0.3s;
+            }
+
+            &:hover::after {
+                background: $darkShade75;
+                transition: 0.3s;
+            }
+        }
     }
 }

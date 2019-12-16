@@ -9,3 +9,15 @@
 
     @return $pixels / $context * 1rem;
 }
+
+@mixin size($width,$height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+}

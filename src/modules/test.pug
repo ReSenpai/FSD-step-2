@@ -1,11 +1,11 @@
 //- mixin  li-dropdown
 
-mixin li-dropdown(room, counter)
+mixin li-dropdown(room, counter, id)
     li.short-dropdown__li= room
         .counter
-            .counter__circle#counter__circle_minus(class="counter__circle_minus")
+            .counter__circle(class="counter__circle_minus")
             .counter__number#counter__number= counter
-            .counter__circle#counter__circle_plus(class="counter__circle_plus")
+            .counter__circle(class="counter__circle_plus")
                 
 
 //- block short-dropdown

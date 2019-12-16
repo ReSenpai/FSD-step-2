@@ -11,18 +11,13 @@
 @import "../../modules/short-dropdown/short-dropdown.scss";
 
 html {
-    background: gray;
+    background: whitesmoke;
     padding: 50px;
 }
 
 .test {
-    width: 400px;
-    height: 400px;
-    margin: 100px;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 

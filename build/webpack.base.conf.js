@@ -111,8 +111,7 @@ module.exports = {
     resolve: {
         alias: {
             '~' : 'src',
-            'vue$' : 'vue/dist/vue.js',
-            'bem$' : '../../BEM'
+            'vue$' : 'vue/dist/vue.js'
         }
     },
     plugins: [

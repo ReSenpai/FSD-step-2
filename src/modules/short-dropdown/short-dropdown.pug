@@ -1,22 +1,24 @@
 //- mixin  li-dropdown
 
-mixin li-dropdown(room, counter)
+mixin li-dropdown(room, counter, circleMinusId, counterId, circlePlusId)
     li.short-dropdown__li= room
-                .circle(class="short-dropdown__circle_minus")
-                    span.circle__span(class="circle__span_minus")
-                .short-dropdown__counter= counter
-                .circle(class="short-dropdown__circle_plus")
-                  span.circle__span(class="circle__span_plus-")
-                  span.circle__span(class="circle__span_plusI") 
+        .counter
+            .counter__circle(class="counter__circle_minus", id= circleMinusId)
+            .counter__number(id= counterId)= counter
+            .counter__circle(class="counter__circle_plus",id= circlePlusId)
+                
 
 //- block short-dropdown
 
-.test
-    .short-dropdown
-        .short-dropdown__header
-            span.short-dropdown__result
-            i.short-dropdown__arrow expand_more
-        ul.short-dropdown__ul
-            +li-dropdown('cпальни', '2')
-            +li-dropdown('кровати', '2')
-            +li-dropdown('ванные комнаты', '0')         
+
+.short-dropdown
+    .short-dropdown__header
+        p.short-dropdown__text-header 
+            span(id='dropdownBedrooms') 2 спальни,
+            span(id='dropdownBed') 2 кровати
+            span(id= 'dropdownBathrooms')
+        i.short-dropdown__arrow expand_more
+    ul.short-dropdown__ul
+        +li-dropdown('cпальни', '2', 'circleMinusOne', 'counterOne', 'circlePlusOne')
+        +li-dropdown('кровати', '2', 'circleMinusTwo', 'counterTwo', 'circlePlusTwo')
+        +li-dropdown('ванные комнаты', '0', 'circleMinusThree', 'counterThree', 'circlePlusThree')         

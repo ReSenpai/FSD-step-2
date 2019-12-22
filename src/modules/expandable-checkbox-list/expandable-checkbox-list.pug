@@ -1,0 +1,23 @@
+//- mixin checkbox-list
+
+mixin checkbox-label(name, value)
+    label.checkbox-list__label
+        input.checkbox-list__input(type="checkbox", value= value)
+        span.checkbox-list__input-fake
+        span.checkbox-list__span= name
+    
+
+//- block checkbox-list
+
+.checkbox-list
+    p.checkbox-list__header-text expandable checkbox list
+    i.checkbox-list__arrow expand_more
+ul.checkbox-list__ul
+    +checkbox-label('Завтрак', 'breakfast')
+    +checkbox-label('Письменный стол', 'desk')
+    +checkbox-label('Стуля для кормления', 'feedingChair')
+    +checkbox-label('Кроватка', 'cot')
+    +checkbox-label('Телевизор', 'tv')
+    +checkbox-label('Шампунь', 'shampoo')
+    +checkbox-label('Телевизор', 'tv2')
+    +checkbox-label('Шампунь', 'shampoo2')

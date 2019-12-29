@@ -1,6 +1,6 @@
 .checkbox-list {
     width: 266px;
-    height: 44px;
+    height: 43px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,7 +35,7 @@
 
     &__ul {
         width: 266px;
-        height: 233px;
+        height: 234px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -43,7 +43,11 @@
 
     &__label {
         display: inline-flex;
-        cursor: pointer;
+        align-items: center;
+
+        &:hover .checkbox-list__input ~ .checkbox-list__input-fake {
+            border: 1px solid $purpleFSD;
+        }
     }
 
     &__input {
@@ -55,6 +59,13 @@
 
         &:checked ~ .checkbox-list__input-fake {
             border: 1px solid $purpleFSD;
+
+            &::before {
+                display: block;
+            }
+            &::after {
+                display: block;
+            }
         }
     }
 
@@ -64,7 +75,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+        cursor: pointer;
 
         background-color: $elementBack;
 
@@ -73,10 +84,6 @@
         border-radius: 4px;
 
         &:hover {
-            border: 1px solid $purpleFSD;
-        }
-
-        &:checked {
             border: 1px solid $purpleFSD;
         }
 
@@ -105,5 +112,20 @@
 
             display: none;
         }
+    }
+
+    &__span {
+        height: 18px;
+        margin: 0px 0px 0px 10px;
+
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: $darkShade50;
+
+        cursor: pointer;
     }
 }

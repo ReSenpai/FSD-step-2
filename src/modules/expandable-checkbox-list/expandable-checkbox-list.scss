@@ -42,7 +42,7 @@
     }
 
     &__label {
-        display: flex;
+        display: inline-flex;
         cursor: pointer;
     }
 
@@ -52,11 +52,19 @@
         cursor: pointer;
         height: 0;
         width: 0;
+
+        &:checked ~ .checkbox-list__input-fake {
+            border: 1px solid $purpleFSD;
+        }
     }
 
     &__input-fake {
         width: 20px;
         height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
 
         background-color: $elementBack;
 
@@ -66,6 +74,36 @@
 
         &:hover {
             border: 1px solid $purpleFSD;
+        }
+
+        &:checked {
+            border: 1px solid $purpleFSD;
+        }
+
+        &::before {
+            content:'';
+            position: absolute;
+            width: 6px;
+            height: 8px;
+            margin: -1px 0px 0px 0px;
+            
+            background: $purpleGradient;
+            transform: rotate(45deg);
+            
+            display: none;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 7px;
+            margin: -3px 0px 0px 0px;
+
+            background: white;
+            transform: rotate(45deg);
+
+            display: none;
         }
     }
 }

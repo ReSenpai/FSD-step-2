@@ -5,6 +5,12 @@
     align-items: center;
     justify-content: space-between;
 
+    cursor: pointer;
+
+    &:hover .checkbox-list__header-text ~ .checkbox-list__arrow {
+        color: $darkShade75;
+    }
+
     &__header-text {
         font-family: $montBold;
         font-style: normal;
@@ -127,5 +133,9 @@
         color: $darkShade50;
 
         cursor: pointer;
+
+        &:hover {
+            color: $darkShade75; 
+        }
     }
 }

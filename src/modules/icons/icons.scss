@@ -1,0 +1,64 @@
+.container-icons {
+    height: 79px;
+    width: 291px;
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        width: 48px;
+        height: 48px;
+        
+        font-family: $icons;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 41px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: $purpleFSD;
+    }
+
+    &__text-box {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 0px 10px;
+    }
+
+    &__header-text {
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 24px;
+
+        color: $darkShade75;
+    }
+
+    &__description {
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        
+        color: $darkShade75;
+    }
+
+    &__underline {
+        width: 280px;
+        height: 1px;
+        margin: 4px 0;
+
+        background: $darkShade1;
+    }
+}
+
+@supports (-webkit-text-fill-color: transparent) {
+    .container-icons__icon {
+        background: $purpleGradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

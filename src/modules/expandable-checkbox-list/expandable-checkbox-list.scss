@@ -65,13 +65,10 @@
 
         &:checked ~ .checkbox-list__input-fake {
             border: 1px solid $purpleFSD;
+        }
 
-            &::before {
-                display: block;
-            }
-            &::after {
-                display: block;
-            }
+        &:checked ~ .checkbox-list__input-fake > .checkbox-list__vector {
+            display: block;
         }
     }
 
@@ -92,32 +89,10 @@
         &:hover {
             border: 1px solid $purpleFSD;
         }
+    }
 
-        &::before {
-            content:'';
-            position: absolute;
-            width: 6px;
-            height: 8px;
-            margin: -1px 0px 0px 0px;
-            
-            background: $purpleGradient;
-            transform: rotate(45deg);
-            
-            display: none;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            width: 5px;
-            height: 7px;
-            margin: -3px 0px 0px 0px;
-
-            background: white;
-            transform: rotate(45deg);
-
-            display: none;
-        }
+    &__vector {
+        display: none;
     }
 
     &__span {

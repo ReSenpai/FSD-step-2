@@ -1,0 +1,16 @@
+//- mixin
+
+mixin container-icons(iconsCode, headerText, description)
+    .container-icons
+        i.container-icons__icon= iconsCode
+        .container-icons__text-box
+            span.container-icons__header-text= headerText
+            span.container-icons__description= description
+    hr.container-icons__underline
+
+
++container-icons('mood', 'Комфорт', 'Шумопоглощающие стены')
++container-icons('location_city', 'Удобство', 'Окно в каждой из спален')
++container-icons('whatshot', 'Уют', 'Номер оснащен каминомы')     
+
+

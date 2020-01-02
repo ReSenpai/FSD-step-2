@@ -1,0 +1,77 @@
+
+.like-button {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+
+    $border: 1px;
+    background: #FFFFFF;
+    background-clip: padding-box;
+    border: solid $border transparent;
+    border-radius: 10px;
+
+    transition: .4s;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -$border;
+        
+        border-radius: inherit;
+        background: $darkShade25;
+    }
+
+    &_active {
+
+        &::before {
+            background: $purpleGradient;
+        }
+        
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: $icons;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 9px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        color: $darkShade25;
+
+        &_active {
+            content: 'favorite';
+            color: $purpleFSD ;
+        }
+    }
+
+    &__counter {
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: bolder;
+        font-size: 10px;
+        line-height: 12px;
+
+        text-align: center;
+
+        color: $darkShade25;
+
+        &_active {
+            color: $purpleFSD ;
+        }
+    }
+}

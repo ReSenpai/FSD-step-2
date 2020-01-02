@@ -1,0 +1,18 @@
+
+//- radio buttons
+
+mixin radio-buttons(header, description1, description2)
+    .radio-buttons
+        span.radio-buttons__header-text= header
+        .radio-buttons__buttons-container
+            label.radio-buttons__label
+                input.radio-buttons__input(type="radio" checked="checked" name="radio")
+                span.radio-buttons__fake-radio
+                span.radio-buttons__description= description1
+            label.radio-buttons__label
+                input.radio-buttons__input(type="radio" name="radio")
+                span.radio-buttons__fake-radio 
+                span.radio-buttons__description= description2
+
+
++radio-buttons('radio buttons', 'Мужчина', 'Женщина')

@@ -1,0 +1,89 @@
+
+.radio-buttons {
+    width: 220px;
+    height: 53px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__header-text {
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        text-transform: uppercase;
+
+        color: $darkShade100;
+    }
+
+    &__buttons-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover .radio-buttons__input ~ .radio-buttons__fake-radio {
+            border: 1px solid $purpleFSD;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .radio-buttons__fake-radio {
+            border: 1px solid $purpleFSD;
+        }
+
+        &:checked ~ .radio-buttons__fake-radio:after {
+            display: block;
+        }
+    }
+
+    &__fake-radio {
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 10px 0px 0px;
+
+        background-color: #ffffff;
+
+        border: 1px solid $darkShade25;
+        box-sizing: border-box;
+        border-radius: 10px;
+
+        &:hover {
+            border: 1px solid $purpleFSD;
+        }
+
+        &::after {
+            content: '';
+            width: 12px;
+            height: 12px;
+            display: none;
+
+            background: $purpleGradient;
+            border-radius: 10px;
+        }
+    }
+
+    &__description {
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+
+        color: $darkShade75;
+    }
+}

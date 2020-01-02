@@ -1,17 +1,13 @@
-.checkbox-list {
-    width: 266px;
-    height: 43px;
+
+.checkbox-buttons {
+    width: 222px;
+    height: 129.12px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    cursor: pointer;
-
-    &:hover .checkbox-list__header-text ~ .checkbox-list__arrow {
-        color: $darkShade75;
-    }
+    flex-direction: column;
 
     &__header-text {
+        height: 15px;
+
         font-family: $montBold;
         font-style: normal;
         font-weight: bold;
@@ -23,35 +19,19 @@
         color: $darkShade100;
     }
 
-    &__arrow {
-        width: 44px;
-        height: 44px;
-
-        font-family: $icons;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        color: $darkShade50;
-    }
-
     &__ul {
-        width: 266px;
-        height: 234px;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
+        padding: 10px 0px 13px 0px;
     }
 
     &__label {
-        display: inline-flex;
+        display: flex;
         align-items: center;
 
-        &:hover .checkbox-list__input ~ .checkbox-list__input-fake {
+        &:hover .checkbox-buttons__input ~ .checkbox-buttons__input-fake {
             border: 1px solid $purpleFSD;
         }
     }
@@ -63,11 +43,11 @@
         height: 0;
         width: 0;
 
-        &:checked ~ .checkbox-list__input-fake {
+        &:checked ~ .checkbox-buttons__input-fake {
             border: 1px solid $purpleFSD;
         }
 
-        &:checked ~ .checkbox-list__input-fake > .checkbox-list__vector {
+        &:checked ~ .checkbox-buttons__input-fake > .checkbox-buttons__vector {
             width: 10px;
             height: 8px;
         }
@@ -79,6 +59,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
+
         cursor: pointer;
 
         background-color: $elementBack;
@@ -100,6 +82,8 @@
     &__span {
         height: 18px;
         margin: 0px 0px 0px 10px;
+        display: flex;
+        
 
         font-family: $montNorm;
         font-style: normal;

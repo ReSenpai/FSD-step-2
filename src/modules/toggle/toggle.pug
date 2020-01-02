@@ -1,0 +1,18 @@
+
+//- toggle
+
+mixin toggle(header, description1, description2)
+    .toggle
+        span.toggle__header-text= header
+        label.toggle__label
+            input.toggle__input(type="checkbox")
+            span.toggle__fake-input
+            span.toggle__description= description1
+        label.toggle__label
+            input.toggle__input(type="checkbox")
+            span.toggle__fake-input
+            span.toggle__description= description2
+
++toggle('toggle', 'Получать спецпредложения', 'Получать спецпредложения')
+
+

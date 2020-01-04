@@ -3,10 +3,11 @@
     width: 120px;
     height: 24px;
     display: flex;
+    align-items: center;
 
     &__star {
         width: 24px;
-        height: 24px;
+        height: 20px;
         cursor: pointer;
 
         font-family: $icons;
@@ -14,10 +15,14 @@
         font-weight: normal;
         font-size: 24px;
         line-height: 20px;
-        display: flex;
-        align-items: center;
-        text-align: center;
+        
 
+        color: $purpleFSD;
+    }
+}
+
+@supports (-webkit-text-fill-color: transparent) {
+    .rate-button__star {
         background: $purpleGradient;
         background-clip: text;
         -webkit-text-fill-color: transparent;

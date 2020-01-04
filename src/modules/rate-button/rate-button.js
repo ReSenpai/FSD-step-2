@@ -8,18 +8,20 @@ $(document).ready(function(){
         if(boolean === 'star') {
             switch(star) {
                 case 'star01':
-                    $('#star01,#star02,#star03,#star04,#star05').text('star_border');
+                    if($('#star02').text() === 'star') {
+                        $('#star02,#star03,#star04,#star05').text('star_border');
+                    } else {
+                        $('#star01,#star02,#star03,#star04,#star05').text('star_border');
+                    }
+                    
                     break;
                 case 'star02':
-                    $('#star02,#star03,#star04,#star05').text('star_border');
-                    break;
-                case 'star03':
                     $('#star03,#star04,#star05').text('star_border');
                     break;
-                case 'star04':
+                case 'star03':
                     $('#star04,#star05').text('star_border');
                     break;
-                case 'star05':
+                case 'star04':
                     $('#star05').text('star_border');
                     break;
             }

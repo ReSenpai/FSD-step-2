@@ -18,6 +18,10 @@
         
 
         color: $purpleFSD;
+
+        &:hover {
+            color: $greenFSD;
+        }
     }
 }
 
@@ -27,5 +31,12 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         text-rendering: optimizeLegibility;
+
+        &:hover {
+            background: $greenGradient; 
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-rendering: optimizeLegibility;
+        }
     }
 }

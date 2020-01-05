@@ -1,52 +1,136 @@
 .dropdown {
-    display: flex;
-    justify-content: flex-end;
+    width: 320px;
+    height: 221px;
 
-    &__select {
-        position: relative;
+    &__block-name {
+        margin: 0px 0px 4px 0px;
+
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        text-transform: uppercase;
+
+        color: $darkShade100;
+    }
+    
+    &__header-container {
         width: 320px;
-        height: 44px;
-        padding: 10px 15px;
+        height: 43px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        border: 1px solid $darkShade25;
+        background: #FFFFFF;
+
+        border: 1px solid $darkShade50;
         box-sizing: border-box;
-        border-radius: 4px;
+        border-radius: 4px 4px 0 0;
         outline: none;
+        cursor: pointer;
+    }
+
+    &__header-text {
+        margin: 0px 0px 0px 15px;
 
         font-family: $montNorm;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
-        line-height: 24px;
+        line-height: 18px;
 
-        background: none;
         color: $darkShade75;
-
-        appearance: none;
-
-        &:focus {
-            border: 1px solid $darkShade50; 
-        }
-
-        &:hover {
-            border: 1px solid $darkShade50;
-        }
     }
 
-    &__arrow {
-        position: absolute;
+    &__header-icon {
         width: 44px;
         height: 44px;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
 
         font-family: $icons;
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
         line-height: 24px;
+        text-align: center;
 
+        color: $darkShade75;
+    }
+
+    &__main-container {
+        width: 320px;
+        height: 158px;
+        padding: 7px 6px 14px 14px;
+
+        background: #FFFFFF;
+
+        border: 1px solid $darkShade50;
+        border-top: none;
+        box-sizing: border-box;
+        border-radius: 0 0 4px 4px ;
+        box-shadow: 0px 10px 20px $darkShade5;
+    }
+
+    &__ul {
+        height: 104px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        list-style-type: none;
+    }
+
+    &__li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        text-transform: uppercase;
+
+        color: $darkShade100;
+    }
+
+    &__lower-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0px 0px 0px;
+    }
+
+    &__clear-button {
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        text-transform: uppercase;
+        background: none;
         color: $darkShade50;
+
+        cursor: pointer;
+    }
+
+    &__apply-button {
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        text-transform: uppercase;
+        background: none;
+        color: $purpleFSD;
+
+        cursor: pointer;
     }
 }

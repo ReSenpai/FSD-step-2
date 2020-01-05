@@ -1,7 +1,27 @@
+//- mixins
+
+mixin dropdown__li(name, counter, circleMinusId, counterId, circlePlusId)
+    li.dropdown__li= name
+        .counter
+            .counter__circle(class="counter__circle_minus", id= circleMinusId)
+            .counter__number(id= counterId)= counter
+            .counter__circle(class="counter__circle_plus",id= circlePlusId)
+
 
 .dropdown
-    i.dropdown__arrow expand_more
-    select.dropdown__select(name='dropdown')
-        option(value='0', selected = true) Сколько гостей 
-        option(value="6") 1
-        option(value="7") 2
+    .dropdown__block-name dropdown
+    .dropdown__header-container
+        span.dropdown__header-text Сколько гостей
+        i.dropdown__header-icon expand_more
+    .dropdown__main-container
+        ul.dropdown__ul
+            +dropdown__li('взрослые','0', 'circleMinus1', 'counter1', 'circlePlus1')
+            +dropdown__li('дети', '0','circleMinus2', 'counter2', 'circlePlus2')
+            +dropdown__li('младенцы', '0', 'circleMinus3', 'counter3', 'circlePlus3')
+        .dropdown__lower-buttons
+            input.dropdown__clear-button(type="button" value='очистить')
+            input.dropdown__apply-button(type="button" value='применить') 
+            
+        
+
+    

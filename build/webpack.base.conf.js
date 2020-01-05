@@ -9,7 +9,8 @@ const { VueLoaderPlugin } = require('vue-loader');
 const PATHS = {
    src: path.join(__dirname, '../src'),
    dist: path.join(__dirname, '../dist'),
-   assets: 'assets/'
+   assets: 'assets/',
+   img: path.join(__dirname, '../src/modules/*')
 }
 
 
@@ -27,7 +28,8 @@ module.exports = {
         // lk: `${PATHS.src}/lk.js`
     },
     output: {
-        filename: `${PATHS.assets}js/[name].[hash].js`,
+        // filename: `${PATHS.assets}js/[name].[hash].js`,
+        filename: `${PATHS.assets}js/[name].js`,
         path: PATHS.dist,
         publicPath: '/'
     },
@@ -69,13 +71,13 @@ module.exports = {
                 name: '[name].[ext]'
             }
         },
-        {
-            test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'file-loader',
-            options: {
-                name: '[name].[ext]'
-            }
-        },
+        // {
+        //     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        //     loader: 'file-loader',
+        //     options: {
+        //         name: '[name].[ext]'
+        //     }
+        // },
         {
             test: /\.scss$/,
             use: [
@@ -117,7 +119,8 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: `${PATHS.assets}css/[name].[hash].css`,
+            // filename: `${PATHS.assets}css/[name].[hash].css`,
+            filename: `${PATHS.assets}css/[name].css`,
             chunkFilename: "[id].css"
         }),
         new HtmlWebpackPlugin({
@@ -126,7 +129,10 @@ module.exports = {
             // inject: false
         }),
         new CopyWebpackPlugin([
-            { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+            { from: `${PATHS.img}/*.svg`, to: `${PATHS.assets}img/[name].[ext]` },
+            { from: `${PATHS.img}/*.jpg`, to: `${PATHS.assets}img/[name].[ext]` },
+            { from: `${PATHS.img}/*.png`, to: `${PATHS.assets}img/[name].[ext]` },
+            { from: `${PATHS.img}/*.gif`, to: `${PATHS.assets}img/[name].[ext]` },
             { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
             { from: `${PATHS.src}/static`, to: '' }
         ]),

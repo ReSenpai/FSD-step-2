@@ -13,7 +13,6 @@ $(document).ready(function(){
                     } else {
                         $('#star01,#star02,#star03,#star04,#star05').text('star_border');
                     }
-                    
                     break;
                 case 'star02':
                     $('#star03,#star04,#star05').text('star_border');

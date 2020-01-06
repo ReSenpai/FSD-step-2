@@ -25,11 +25,21 @@
 
         background: #FFFFFF;
 
-        border: 1px solid $darkShade50;
+        border: 1px solid $darkShade25;
         box-sizing: border-box;
-        border-radius: 4px 4px 0 0;
+        border-radius: 4px;
         outline: none;
+        User-select: none;
         cursor: pointer;
+
+        &_active {
+            border: 1px solid $darkShade50;
+            border-radius: 4px 4px 0 0; 
+        }
+
+        &:hover {
+            border: 1px solid $darkShade50;
+        }
     }
 
     &__header-text {
@@ -58,7 +68,15 @@
         line-height: 24px;
         text-align: center;
 
-        color: $darkShade75;
+        color: $darkShade50;
+
+        &_active {
+            color: $darkShade75; 
+        }
+        
+        &:hover {
+            color: $darkShade75;
+        }
     }
 
     &__main-container {
@@ -73,6 +91,8 @@
         box-sizing: border-box;
         border-radius: 0 0 4px 4px ;
         box-shadow: 0px 10px 20px $darkShade5;
+
+        display: none;
     }
 
     &__ul {
@@ -82,6 +102,7 @@
         justify-content: space-between;
 
         list-style-type: none;
+        User-select: none;
     }
 
     &__li {
@@ -102,8 +123,12 @@
 
     &__lower-buttons {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         margin: 20px 0px 0px 0px;
+
+        &_show-clear-button {
+            justify-content: space-between;
+        }
     }
 
     &__clear-button {
@@ -116,8 +141,15 @@
         text-transform: uppercase;
         background: none;
         color: $darkShade50;
+        border: none;
+        outline: none;
 
         cursor: pointer;
+        display: none;
+
+        &_show {
+            display: block;
+        }
     }
 
     &__apply-button {
@@ -130,6 +162,8 @@
         text-transform: uppercase;
         background: none;
         color: $purpleFSD;
+        border: none;
+        outline: none;
 
         cursor: pointer;
     }

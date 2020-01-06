@@ -7,8 +7,6 @@ $(document).ready(function() {
 
         var checked = $('.like-button').hasClass('like-button_active');
 
-        console.log(checked);
-
         switch(checked) {
             case true:
                 $('.like-button__counter').text(counter - 1).removeClass('like-button__counter_active');

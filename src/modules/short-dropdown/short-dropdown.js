@@ -7,7 +7,7 @@ $(document).ready(function(){
     //- dropdown animation
 
     $('.short-dropdown__arrow').on('click',function(){
-        $('.short-dropdown__ul').slideToggle(350);
+        $('.short-dropdown__ul').slideToggle(250);
     });
 
     

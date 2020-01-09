@@ -1,4 +1,5 @@
 .short-dropdown {
+    User-select: none;
 
     &__header {
         position: relative;
@@ -9,7 +10,7 @@
 
         border: 1px solid $darkShade25;
         box-sizing: border-box;
-        border-radius: 4px 4px 0 0;
+        border-radius: 4px;
         outline: none;
 
         background: $elementBack;
@@ -18,13 +19,14 @@
         cursor: pointer;
         z-index: 100;
 
-        &:focus {
-            border: 1px solid $darkShade50; 
+        &_active {
+            border: 1px solid $darkShade50;
+            border-radius: 4px 4px 0 0;
         }
 
         &:hover {
             border: 1px solid $darkShade50;
-            transition: 0.3s;
+            transition: 0.2s;
         }
     }
 
@@ -61,6 +63,14 @@
         line-height: 24px;
 
         color: $darkShade50;
+
+        &_active {
+            color: $darkShade75; 
+        }
+        
+        &:hover {
+            color: $darkShade75;
+        }
     }
 
     &__ul {
@@ -78,6 +88,7 @@
         border-radius: 0 0 4px 4px ;
 
         list-style-type: none;
+        display: none;
     }
 
     &__li {

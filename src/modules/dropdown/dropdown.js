@@ -6,9 +6,11 @@ $(document).ready(function(){
 
         switch(checked) {
             case false:
+                $('.dropdown__header-icon').addClass('dropdown__header-icon_active');
                 $('.dropdown__header-container').addClass('dropdown__header-container_active');
                 break;
             case true:
+                $('.dropdown__header-icon').removeClass('dropdown__header-icon_active');
                 setTimeout(function () {
                     $('.dropdown__header-container').removeClass('dropdown__header-container_active')
                     }, 250); 

@@ -1,98 +1,131 @@
 import $ from 'jquery';
 
-//- Поправить цвет границ хедера, что бы при открытие он становился одного цвета с ul. Сделать логику для окончаний названия комнат в зависимости от их количества и так же сделать что то с знаками припинания между ними. Придумать более приемлемую анимацию нажатия кнопок. Сделать область клика для раскрытия дропдауна побольше.
-
 $(document).ready(function(){
+    $('.short-dropdown__header').on('click', function(){
+        const checked = $(this).hasClass('short-dropdown__header_active');
+        const dropdown = $(this)
 
-    //- dropdown animation
-
-    $('.short-dropdown__arrow').on('click',function(){
-        $('.short-dropdown__ul').slideToggle(250);
-    });
-
-    
-//- dropdown logic
-
-    //- bedrooms
-
-    $('#circlePlusOne').on('click', function(){
-        var counter = parseInt($('#counterOne').text()) + 1;   
-
-        if(counter > 10)
-        counter = 10
-
-        $('#counterOne').text(counter);
-
-        $('#dropdownBedrooms').text(`${counter} спальни,`);
-    }); 
-    
-    $('#circleMinusOne').on('click', function(){
-        var counter = parseInt($('#counterOne').text()) - 1;
-
-        if(counter < 0)
-        counter = 0;
-
-        $('#counterOne').text(counter);
-
-        if(counter == 0)
-            $('#dropdownBedrooms').text(``)
-        else
-            $('#dropdownBedrooms').text(`${counter} спальни,`);
+        if(checked) {
+            $(this).children('.short-dropdown__arrow').removeClass('short-dropdown__arrow_active');
+            setTimeout(function(){
+                $(dropdown).removeClass('short-dropdown__header_active');
+            }, 150);
+        } else {
+            $(this).children('.short-dropdown__arrow').addClass('short-dropdown__arrow_active');
+            $(this).addClass('short-dropdown__header_active');
+        }
+       
+        $(this).siblings('.short-dropdown__ul').slideToggle(250);
     });
 
 
-    //- bed
+    $('.counter__circle').on('click', function(){
 
-    $('#circlePlusTwo').on('click', function(){
-        var counter = parseInt($('#counterTwo').text()) + 1;   
+        const buttons = $(this).attr('class');
+        let counter = parseInt($(this).siblings('.counter__number').text());
 
-        if(counter > 10)
-        counter = 10
+        switch(buttons) {
+            case 'counter__circle counter__circle_plus':
+                if(counter >= 10) {
+                    counter = 10
+                } else {
+                    counter++;
+                }    
+                break;
+            case 'counter__circle counter__circle_minus':
+                if(counter <= 0) {
+                    counter = 0;
+                } else {
+                    counter--;
+                }
+                break;
+        }
 
-        $('#counterTwo').text(counter);
+        let rooms = $(this).parents('.counter').siblings('span').text();
+        let bedrooms = 'спальни';
+        let bed = 'кровати';
+        let bathrooms = 'ванные комнаты';
 
-        $('#dropdownBed').text(`${counter} кровати,`);
-    }); 
-    
-    $('#circleMinusTwo').on('click', function(){
-        var counter = parseInt($('#counterTwo').text()) - 1;
+        const checkedRooms = (checked) => {
+            if(counter == 0) {
+                return '';
+            } else if(counter > 10 && counter <= 20) {
+                switch(checked) {
+                    case bedrooms:
+                        return `${counter} спален`;
+                    case bed:
+                        return `${counter} кроватей`;
+                    case bathrooms:
+                        return `${counter} ванных комнат`;
+                }
+            } else if (counter % 10 === 1) {
+                switch(checked) {
+                    case bedrooms:
+                        return `${counter} спальня`;
+                    case bed:
+                        return `${counter} кровать`;
+                    case bathrooms:
+                        return `${counter} ванная комната`;
+                }
+            } else if (counter % 10 > 0  && counter % 10 < 5) {
+                switch(checked) {
+                    case bedrooms:
+                        return `${counter} спальни`;
+                    case bed:
+                        return `${counter} кровати`;
+                    case bathrooms:
+                        return `${counter} ванные комнаты`;
+                }
+            } else {
+                switch(checked) {
+                    case bedrooms:
+                        return `${counter} спален`;
+                    case bed:
+                        return `${counter} кроватей`;
+                    case bathrooms:
+                        return `${counter} ванных комнат`;
+                }
+            }
+        }
+        
+        switch(rooms) {
+            case 'спальни':
+                bedrooms = checkedRooms(bedrooms);
+                console.log(bedrooms);
+                break;
+            case 'кровати':
+                bed = checkedRooms(bed);
+                console.log(bed);
+                break;
+            case 'ванные комнаты':
+                bathrooms = checkedRooms(bathrooms);
+                console.log(bathrooms);
+                break;
+        }
 
-        if(counter < 0)
-        counter = 0;
+        let firstCom = ',';
+        let secondCom = ',';
+        let headerText = `${bedrooms + firstCom + bed + secondCom + bathrooms}`
 
-        $('#counterTwo').text(counter);
+        if(bedrooms == '' && bed == '') {
+            firstCom = '';
+            secondCom = '';
+        } else if(bed == '' && bathrooms == '') {
+            firstCom = '';
+            secondCom = '';
+        } else if(bedrooms == '') {
+            firstCom = '';
+        } else if(bed == '') {
+            secondCom = '';
+        }
 
-        if(counter == 0)
-            $('#dropdownBed').text(``)
-        else
-            $('#dropdownBed').text(`${counter} кровати,`);
-    });
+        $(this).siblings('.counter__number').html(counter);
+        console.log($(this).parents('.short-dropdown').find('.short-dropdown__span').text());
 
-    //- Bathrooms
+        
 
-    $('#circlePlusThree').on('click', function(){
-        var counter = parseInt($('#counterThree').text()) + 1;   
-
-        if(counter > 10)
-        counter = 10
-
-        $('#counterThree').text(counter);
-
-        $('#dropdownBathrooms').text(`${counter} ванн,`);
-    }); 
-    
-    $('#circleMinusThree').on('click', function(){
-        var counter = parseInt($('#counterThree').text()) - 1;
-
-        if(counter < 0)
-        counter = 0;
-
-        $('#counterThree').text(counter);
-
-        if(counter == 0)
-            $('#dropdownBathrooms').text(``)
-        else
-            $('#dropdownBathrooms').text(`${counter} ванн,`);
+        console.log(headerText);
+        // console.log(rooms);
     });
 });
 

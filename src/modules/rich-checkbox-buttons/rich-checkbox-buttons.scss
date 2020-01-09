@@ -1,0 +1,107 @@
+
+.rich-checkbox-buttons {
+    width: 266px;
+    height: 145px;
+    display: flex;
+    flex-direction: column;
+
+    &__header-text {
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        text-transform: uppercase;
+
+        color: $darkShade100;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding: 16px 0px 0px 0px;
+    }
+
+    &__label {
+        display: flex;
+
+        &:hover .rich-checkbox-buttons__input ~ .rich-checkbox-buttons__input-fake {
+            border: 1px solid $purpleFSD;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .rich-checkbox-buttons__input-fake {
+            border: 1px solid $purpleFSD;
+        }
+
+        &:checked ~ .rich-checkbox-buttons__input-fake > .rich-checkbox-buttons__vector {
+            width: 10px;
+            height: 8px;
+        }
+    }
+
+    &__input-fake {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin: 0px 10px 0px 0px;
+
+        cursor: pointer;
+
+        background-color: $elementBack;
+
+        border: 1px solid $darkShade25;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        &:hover {
+            border: 1px solid $purpleFSD;
+        }
+    }
+
+    &__vector {
+        width: 0px;
+        height: 0px;
+    }
+
+    &__checkbox-text {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    &__checkbox-name {
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0px 0px 6px 0px;
+
+        color: $darkShade75;
+    }
+
+    &__checkbox-description {
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        padding: 0px 8px 0px 0px;
+
+        color: $darkShade50;
+    }
+}

@@ -1,4 +1,5 @@
 
-.like-button
-    i.like-button__icon favorite_border
-    span.like-button__counter 2
+mixin like-button(counter)
+    .like-button
+        i.like-button__icon favorite_border
+        span.like-button__counter= counter

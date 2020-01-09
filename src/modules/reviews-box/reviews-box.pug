@@ -1,0 +1,15 @@
+
+mixin reviews-box(img, username, pastTime, likes, description)   
+    .reviews-box
+        .reviews-box__user-container
+            img.reviews-box__user-photo(src= img, alt="")
+            .reviews-box__username-container
+                span.reviews-box__username= username
+                span.reviews-box__past-time= pastTime
+        .reviews-box__description-container
+            .reviews-box__like-button
+                +like-button(likes)
+            .reviews-box__description-text= description
+
++reviews-box('../assets/img/girl.jpg','София Сарафанова', '5 дней назад', '12', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивала комплименты повару -- никто не жаловался из соседей.')
++reviews-box('../assets/img/boy.jpg', 'Израэль Шариф', '14 дней назад', '2', 'Еда просто блеск, мои комплименты повару. А какой вид открывается с балкона номера - это просто сказка. Мы с девушкой остались очень довольны, в следующий отпуск обязательно воспользуемся снова этим же отелем!')

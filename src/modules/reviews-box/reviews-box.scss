@@ -1,0 +1,65 @@
+
+.reviews-box {
+    width: 710px;
+
+    &__user-container {
+        display: flex;
+    }
+
+    &__user-photo {
+        width: 47.67px;
+        height: 48px;
+
+        object-fit: cover;
+        border: 2px solid #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+        border-radius: 32px;
+    }
+
+    &__username-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 0px 10px;
+    }
+
+    &__username {
+        font-family: $montBold;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 24px;
+
+        color: $darkShade75;
+    }
+
+    &__past-time {
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+
+        color: $darkShade75;
+    }
+
+    &__description-container {
+        display: flex;
+        margin: 10px 0px 0px 0px;
+    }
+
+    &__like-button {
+        padding: 2px 0px 0px 4px;
+        margin: 0px 14px 0px 0px;
+    }
+
+    &__description-text {
+        font-family: $montNorm;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+
+        color: $darkShade75;
+    }
+}

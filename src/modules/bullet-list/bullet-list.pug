@@ -1,6 +1,12 @@
 
-.bullet-list
-    ul.bullet-list__ul
-        li.bullet-list__li
-        li.bullet-list__li
-        li.bullet-list__li
+mixin bullet-list(headerText, text01, text02, text03)
+    .bullet-list
+        span.bullet-list__header-text= headerText
+        ul.bullet-list__ul
+            li.bullet-list__li= text01
+            li.bullet-list__li= text02
+            li.bullet-list__li!= text03
+
+-const longDash = '&mdash;';
+
++bullet-list('bullet list', 'Нельзя с питомцами', 'Без вечеринок и мероприятий', `Время прибытия ${longDash} после 13:00, а выезд до 12:00`)

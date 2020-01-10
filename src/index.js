@@ -6,6 +6,7 @@ import './modules/expandable-checkbox-list/expandable-checkbox-list.js';
 import './modules/like-button/like-button.js';
 import './modules/rate-button/rate-button.js';
 import './modules/dropdown/dropdown.js';
+import './modules/range-slider/range-slider.js';
 
 //- import 'jquery';
 import $ from 'jquery';

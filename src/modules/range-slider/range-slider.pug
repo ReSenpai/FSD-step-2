@@ -1,4 +1,16 @@
 
-.range-group
-    input.range-input(value='10', min='1', max='50', step='1', type='range')
-    input.range-input(value='10', min='1', max='50', step='1', type='range')
+
+mixin range-slider(name)
+    .range-slider
+        .range-slider__text-container
+            span.range-slider__slider-name= name
+            .range-slider__price-range-container
+                input.range-slider__price-range-text(type="number", value='10', min='0', max='100000')
+                input.range-slider__price-range-text(type="number", value='10', min='0', max='100000')
+        .range-slider__slider-container
+            input.range-slider__input(value='10', min='1000', max='100000', step='1000', type='range')
+            input.range-slider__input(value='10', min='1000', max='100000', step='1000', type='range')
+
++range-slider('range slider')
+
+

@@ -10,7 +10,7 @@ import './modules/range-slider/range-slider.js';
 
 //- import 'jquery';
 import $ from 'jquery';
-
+import UI from 'jquery-ui';
 //- import 'vue';
 window.Vue = require('vue');
 import store from './store';

@@ -4,16 +4,16 @@
 
 The project works through a [Webpack](https://webpack.js.org/), be sure to have [node.js](https://nodejs.org/en/)
 
-To deploy the project, write in the terminal:
+To **deploy the project**, write in the terminal:
 
 >```bash
 >npm install
 >```
-Development mode starts:
+**Development** mode starts:
 >```bash
 >npm run dev
 >```
-Collect the build:
+Collect the **build:**
 >```bash
 >npm run build
 >```

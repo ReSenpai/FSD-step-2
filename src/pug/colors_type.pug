@@ -1,0 +1,53 @@
+
+//- mixins
+
+mixin colorBox(color, name, code)
+    .container-colored-squares__color-box
+        .container-colored-squares__colored-square(style={background: color})
+        .container-colored-squares__text-container
+            span.container-colored-squares__color-name= name
+            span.container-colored-squares__color-code= code
+    
+mixin tag(tag, style)
+    span.fonts-container__tag-name(style= style)= tag
+    
+mixin text(classes, text)
+     span(class= classes)= text
+    
+    
+
+    
+
+
+doctype html
+html(lang='ru')
+    head
+        title Colors Type
+    body
+        include ../modules/main-icon/main-icon.pug
+        .body
+            main
+                .position__main-icon
+                    +logo('', 'pages')
+                .main-container
+                    .container-colored-squares
+                        +colorBox('#1F2041', 'Dark Shade 100%', '#1F2041')
+                        +colorBox('rgba(31, 32, 65, 0.75)', 'Dark Shade 75%', '#1F2041')
+                        +colorBox('rgba(31, 32, 65, 0.5)', 'Dark Shade 50%', '#1F2041')
+                        +colorBox('rgba(31, 32, 65, 0.25)', 'Dark Shade 25%', '#1F2041')
+                        +colorBox('rgba(31, 32, 65, 0.05)', 'Dark Shade 5%', '#1F2041')
+                        +colorBox('#BC9CFF', 'Perple', '#BC9CFF')
+                        +colorBox('#6FCF97', 'Green', '#6FCF97')
+                    .fonts-container
+                            +tag('H1', {'font-size': '24px', 'line-height': '29px'})
+                            +text('fonts-container__h1', 'This one is the sub section or widget title')
+                            
+                            +tag('H2', {'font-size': '19px', 'line-height': '23px'})
+                            +text('fonts-container__h2', 'Next one is the item title inside widgets')
+                            
+                            +tag('H3', {'font-size': '12px', 'line-height': '15px'})
+                            +text('fonts-container__h3', 'this is a label or cta text')
+
+                            +tag('Body', {'font-size': '14px', 'line-height': '24px'})
+                            +text('fonts-container__body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')
+                    

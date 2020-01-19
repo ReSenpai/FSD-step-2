@@ -1,5 +1,6 @@
 
-mixin logo()
-   img(src='assets/img/main-icon.svg') 
-
-+logo()
+mixin logo(classes, path)
+   if path == 'pages'
+      img(src='../assets/img/main-icon.svg', class= classes)   
+   else if path == 'index'
+      img(src='../assets/img/main-icon.svg', class= classes) 

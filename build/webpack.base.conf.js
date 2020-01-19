@@ -16,6 +16,8 @@ const PATHS = {
 
 const PAGES_DIR = `${PATHS.src}/pug/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
+// const pagesUiKit = `${PATHS.src}/pages/`;
+// const uiKit = fs.readFileSync(pagesUiKit).filter(fileName => fileName.endsWith('.pug'));
 
 
 module.exports = {
@@ -128,6 +130,11 @@ module.exports = {
             filename: './index.html'
             // inject: false
         }),
+        new HtmlWebpackPlugin({
+            template: `${PATHS.src}/pug/colors_type.pug`,
+            filename: './pages/colors_type.html'
+            // inject: false
+        }),
         new CopyWebpackPlugin([
             { from: `${PATHS.img}/*.svg`, to: `${PATHS.assets}img/[name].[ext]` },
             { from: `${PATHS.img}/*.jpg`, to: `${PATHS.assets}img/[name].[ext]` },
@@ -139,6 +146,10 @@ module.exports = {
         ...PAGES.map(page => new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
             filename: `./${page.replace(/\.pug/,'.html')}`
-          }))
+        })),
+        // ...uiKit.map(page => new HtmlWebpackPlugin({
+        // template: `${pagesUiKit}/${page}`,
+        // filename: `./${page.replace(/\.pug/,'.html')}`
+        // }))
     ],
 }
